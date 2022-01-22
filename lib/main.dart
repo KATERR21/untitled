@@ -11,16 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const borderStyle = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(36)),
-      borderSide: BorderSide(
-        color: const Color(0xFFbcbcc1), width: 2));
+        borderRadius: BorderRadius.all(Radius.circular(36)),
+        borderSide: BorderSide(
+            color: const Color(0xFFbcbcc1), width: 2));
     const linkTextStyle = TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.bold,
         color: Color(0xFF0079D0)
     );
     return MaterialApp(
-      home: Scaffold(
+        home: Scaffold(
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -29,7 +29,10 @@ class MyApp extends StatelessWidget {
               ),
             ),
             width: double.infinity,
-            child: Column (children: [
+            height: double.infinity,
+            padding:EdgeInsets.symmetric(horizontal: 50),
+            child: SingleChildScrollView(
+              child: Column (children: [
                 SizedBox(height: 150,),
                 const SizedBox(width: 110, height: 84, child:
                 Image(image: AssetImage('assets/dart-logo.png')),),
@@ -68,15 +71,15 @@ class MyApp extends StatelessWidget {
                 ),
                 SizedBox(height: 28,),
                 SizedBox(width: 154, height: 42, child:
-                  ElevatedButton(onPressed: () {},
-                    child: Text ('Войти'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF0079D0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(36.0),
-                      ),
+                ElevatedButton(onPressed: () {},
+                  child: Text ('Войти'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF0079D0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(36.0),
                     ),
                   ),
+                ),
                 ),
                 SizedBox(height: 32,),
                 InkWell(child: const Text('Регистрация', style: linkTextStyle,),
@@ -86,7 +89,8 @@ class MyApp extends StatelessWidget {
                 ), onTap: () {}),
               ],),
             ),
-          )
+          ),
+        )
     );
   }
 }
